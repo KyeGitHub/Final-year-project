@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4215147381844097686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2340582540681713777}
+  - component: {fileID: 4215147381844097689}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2340582540681713777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4215147381844097686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4215147381844097689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4215147381844097686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e607e37309764dd4c8b20e8b8f3ceb58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectingRoom: {fileID: 3069087641138277991, guid: 8243201a3506cd24cab634e9e89162a7,
+    type: 3}
+  topLeftRoom: {fileID: 4782078460650979378, guid: bc6384561ad6f4e4b84938b0de1fa2d9,
+    type: 3}
+  bottomLeftRoom: {fileID: 6606046135975903097, guid: dec0fd8e93de81f4b9b1c787a1d8e8e0,
+    type: 3}
+  topRightRoom: {fileID: 4162268294288605805, guid: 596d76ca5759362459cd1c8a33e01ec0,
+    type: 3}
+  bottomRightRoom: {fileID: 4831843500556408995, guid: 699c52b7ae878304d91c365de9ab9195,
+    type: 3}
+  leftWall: {fileID: 3819304507429558282, guid: b9ca711db77e85f46be68f686bab5d1a,
+    type: 3}
+  rightWall: {fileID: 2493054976115119760, guid: ee2a2b6b2d0c25e4a96c6be4084302f1,
+    type: 3}
+  topWall: {fileID: 7982725135695218261, guid: a62c7167f97c775448e88a860cfcd61e, type: 3}
+  bottomWall: {fileID: 863292358111665564, guid: a0e5a6d1e3d509546bd31bd86724f688,
+    type: 3}
+  spawnRoom: {fileID: 3069087641138277991, guid: 2da00ac2b45437c4f839f26e527849f4,
+    type: 3}
+  roomCount: 0
+  dungeonSize: 5
