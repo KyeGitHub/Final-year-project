@@ -282,3 +282,7 @@ D:\Unity\3rd year game\Dungeon Crawler\obj\Debug\Assembly-CSharp.csproj.CoreComp
 D:\Unity\3rd year game\Dungeon Crawler\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Unity\3rd year game\Dungeon Crawler\obj\Debug\Assembly-CSharp.dll
 D:\Unity\3rd year game\Dungeon Crawler\obj\Debug\Assembly-CSharp.pdb
+D:\Unity\3rd year game\Final-year-project\Dungeon-crawler\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\Unity\3rd year game\Final-year-project\Dungeon-crawler\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+D:\Unity\3rd year game\Final-year-project\Dungeon-crawler\obj\Debug\Assembly-CSharp.dll
+D:\Unity\3rd year game\Final-year-project\Dungeon-crawler\obj\Debug\Assembly-CSharp.pdb
