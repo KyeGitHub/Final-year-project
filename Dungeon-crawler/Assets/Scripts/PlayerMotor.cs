@@ -39,7 +39,7 @@ public class PlayerMotor : MonoBehaviour
     public void StopFollowingTarget()
     {
         agent.stoppingDistance = 0;
-        agent.updatePosition = true;
+        agent.updateRotation = true;
         target = null;
     }
     
