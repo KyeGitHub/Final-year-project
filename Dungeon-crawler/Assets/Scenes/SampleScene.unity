@@ -1711,7 +1711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -232.94, y: 300}
+  m_AnchoredPosition: {x: -232.93945, y: 300}
   m_SizeDelta: {x: 300, y: 373.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &828840330
@@ -1817,9 +1817,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2.9875145
   m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Center: {x: 0, y: 1.0062428, z: 0}
 --- !u!195 &860236932
 NavMeshAgent:
   m_ObjectHideFlags: 0

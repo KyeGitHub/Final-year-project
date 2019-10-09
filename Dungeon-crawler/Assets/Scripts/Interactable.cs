@@ -24,6 +24,7 @@ public class Interactable : MonoBehaviour
         {
             float distance = Vector3.Distance(player.position, interactionTransform.position);
             Debug.Log("Focusing " + interactionTransform.name);
+            Debug.Log("Distance " + distance);
 
             if (distance <= radius)
             {
@@ -32,6 +33,7 @@ public class Interactable : MonoBehaviour
             }
         }
     }
+
     public void OnFocused(Transform playerTransform)
     {
         isFocus = true;
