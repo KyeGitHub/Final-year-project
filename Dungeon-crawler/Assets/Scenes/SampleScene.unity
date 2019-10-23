@@ -410,7 +410,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
+  m_BoundingSphereOverride: {x: 0, y: 2.3509887e-38, z: -2.306054e+18, w: 2.1175824e-22}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1893,13 +1893,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 860236928}
-  - component: {fileID: 860236927}
   - component: {fileID: 860236932}
   - component: {fileID: 860236931}
   - component: {fileID: 860236930}
   - component: {fileID: 860236934}
   - component: {fileID: 860236933}
   - component: {fileID: 860236929}
+  - component: {fileID: 860236927}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1916,9 +1916,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 860236926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c7e39b33160114580ea19b6d6418fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 19761a739ecf9534faa47f456eca46ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  damage:
+    baseValue: 5
+  armour:
+    baseValue: 0
 --- !u!4 &860236928
 Transform:
   m_ObjectHideFlags: 0
@@ -1927,7 +1932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860236926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.09, y: 0, z: -11.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1023763449}
