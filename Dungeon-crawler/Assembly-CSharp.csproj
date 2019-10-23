@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
+    <None Include="Assets\Toon.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unity/3rd year game/Final-year-project/Dungeon-crawler/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
