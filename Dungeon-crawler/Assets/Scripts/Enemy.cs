@@ -12,7 +12,7 @@ public class Enemy : Interactable
     {
         playerManager = PlayerManager.instance;
         myStats = GetComponent<CharacterStats>(); //grab the stats of this character
-        interactionTransform = GetComponent<Transform>();
+        //interactionTransform = GetComponent<Transform>();
     }
 
     //Called when enemy is interacted with

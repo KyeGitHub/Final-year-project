@@ -24,4 +24,14 @@ public class PlayerStats : CharacterStats
         }
     }
 
+    public override void Die()
+    {
+        base.Die();
+        PlayerManager.instance.KillPlayer();
+        // Kill player
+        // drop items
+        // health back to full
+        // Clear any focus 
+
+    }
 }

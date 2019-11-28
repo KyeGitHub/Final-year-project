@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/* Controls the Enemy AI*/
+
 public class EnemyAiController : MonoBehaviour
 {
-    public float lookRadius = 10f;
-    Transform target;
-    NavMeshAgent agent;
+    public float lookRadius = 10f; //Detection range
+
+    Transform target; //Reference to the player
+    NavMeshAgent agent; //Reference to nav mesh agent
+    CharacterCombat combat; //Reference to combat
 
     void Start()
     {
+        //grabbing everything
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        combat = GetComponent<CharacterCombat>();
     }
 
     // Update is called once per frame
@@ -26,8 +32,15 @@ public class EnemyAiController : MonoBehaviour
 
             if(distance <= agent.stoppingDistance)
             {
-                //attack
-                FaceTarget();
+                CharacterStats targetStats = target.GetComponent<CharacterStats>(); // grab the targets stats
+
+                if (targetStats != null) //if the target has stats and we haven't some how messed up and attacked something that we shouldn't be able to
+                {
+                    //Attack
+                    combat.Attack(targetStats); //attack the targets Stats
+                    FaceTarget();
+                }
+                 
             }
         }
 
