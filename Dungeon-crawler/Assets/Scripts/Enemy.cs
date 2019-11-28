@@ -2,17 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+[RequireComponent(typeof(CharacterStats))] //make sure we actually have stats
+public class Enemy : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    PlayerManager playerManager;
+    CharacterStats myStats;
+
+    private void Start()
     {
-        
+        playerManager = PlayerManager.instance;
+        myStats = GetComponent<CharacterStats>(); //grab the stats of this character
+        interactionTransform = GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //Called when enemy is interacted with
+    public override void Interact()
     {
-        
+        //Do normal interact function
+        base.Interact();
+
+        CharacterCombat playerCombat = playerManager.player.GetComponent<CharacterCombat>();
+
+        //attack
+        if (playerCombat != null)
+        {
+            playerCombat.Attack(myStats);
+        }
     }
 }
