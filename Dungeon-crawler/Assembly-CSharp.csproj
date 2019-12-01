@@ -63,12 +63,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CharacterAnimationEventReciever.cs" />
     <Compile Include="Assets\Scripts\CharacterAnimator.cs" />
     <Compile Include="Assets\Scripts\CharacterCombat.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyAiController.cs" />
     <Compile Include="Assets\Scripts\EquipmentManager.cs" />
-    <Compile Include="Assets\Scripts\Helper\ConvertToRegularMesh.cs" />
+    <Compile Include="Assets\Scripts\HealthUI.cs" />
     <Compile Include="Assets\Scripts\Helper\MeshFromSkinnedMesh.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />

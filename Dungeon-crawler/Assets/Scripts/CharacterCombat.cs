@@ -21,6 +21,7 @@ public class CharacterCombat : MonoBehaviour
     public event System.Action OnAttack;
 
     CharacterStats myStats;
+    CharacterStats opponentStats;
 
     private void Start()
     {
@@ -43,8 +44,8 @@ public class CharacterCombat : MonoBehaviour
     {
         if (attackCooldown <= 0f) // if there is no cooldown on attacking
         {
-            StartCoroutine(DoDamage(targetStats, attackDelay));
 
+            opponentStats = targetStats;
             if (OnAttack != null)
                 OnAttack();
 
@@ -54,14 +55,12 @@ public class CharacterCombat : MonoBehaviour
         }
    
     }
-
-    IEnumerator DoDamage (CharacterStats stats, float delay)
+    public void AttackHit_AnimationEvent()
     {
-        yield return new WaitForSeconds(delay);
         //damage the target based on the damage value of the attacking character
-        stats.TakeDamage(myStats.damage.GetValue());
+        opponentStats.TakeDamage(myStats.damage.GetValue());
 
-        if (stats.currentHealth <= 0)
+        if (opponentStats.currentHealth <= 0)
         {
             InCombat = false; //if we killed the target we aren't in combat
         }
