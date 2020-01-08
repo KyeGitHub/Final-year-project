@@ -1972,30 +1972,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697586887}
   m_CullTransparentMesh: 0
---- !u!1 &792158914 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4215147381844097686, guid: a77b6b0ede8bd96468908dd7326921af,
-    type: 3}
-  m_PrefabInstance: {fileID: 1667804682}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &792158919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792158914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b31c7ef74fd957e4faaaa711f7f15d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultItems:
-  - {fileID: 11400000, guid: 440a9699299c58f46bfdbd57b71c2d94, type: 2}
-  - {fileID: 11400000, guid: ca6e91f52df58414b81c2acfe60b90e5, type: 2}
-  - {fileID: 11400000, guid: 3d27f5073a4936a41b77dfc69898779c, type: 2}
-  - {fileID: 11400000, guid: 59d2ebb8769ff8147a56895a0b8baeeb, type: 2}
-  targetMesh: {fileID: 1042452649235466936}
 --- !u!1001 &822340078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3911,6 +3887,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4215147381844097686, guid: a77b6b0ede8bd96468908dd7326921af,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     - target: {fileID: 2340582540681713777, guid: a77b6b0ede8bd96468908dd7326921af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3971,10 +3952,20 @@ PrefabInstance:
       propertyPath: surface
       value: 
       objectReference: {fileID: 1278655200}
+    - target: {fileID: 4215147381844097689, guid: a77b6b0ede8bd96468908dd7326921af,
+        type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 3069087641138277991, guid: 3395c07aa51cc234dbd37196dcb0a6ee,
+        type: 3}
     - target: {fileID: 792158915, guid: a77b6b0ede8bd96468908dd7326921af, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 860236926}
+    - target: {fileID: 792158919, guid: a77b6b0ede8bd96468908dd7326921af, type: 3}
+      propertyPath: targetMesh
+      value: 
+      objectReference: {fileID: 1042452649235466936}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a77b6b0ede8bd96468908dd7326921af, type: 3}
 --- !u!1001 &1669646217
@@ -4589,11 +4580,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: d8a6c6d98c9fd51458dfa0ae455ee7f4,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: efc9ccdcabb3eea4fb9ec1e60ec83cd3, type: 2}
     - target: {fileID: -4216859302048453862, guid: d8a6c6d98c9fd51458dfa0ae455ee7f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4649,6 +4635,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: d8a6c6d98c9fd51458dfa0ae455ee7f4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: efc9ccdcabb3eea4fb9ec1e60ec83cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8a6c6d98c9fd51458dfa0ae455ee7f4, type: 3}
 --- !u!1 &2069113846
