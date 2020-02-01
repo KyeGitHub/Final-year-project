@@ -9,6 +9,7 @@ TagManager:
   - Resource Room
   - Spawn Room
   - Demi Boss Room
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
