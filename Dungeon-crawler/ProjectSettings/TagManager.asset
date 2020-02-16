@@ -11,6 +11,7 @@ TagManager:
   - Demi Boss Room
   - SpawnPoint
   - Mixed Room
+  - Navmesh
   layers:
   - Default
   - TransparentFX

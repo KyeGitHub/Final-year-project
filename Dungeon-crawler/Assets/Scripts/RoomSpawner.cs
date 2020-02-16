@@ -26,25 +26,24 @@ public class RoomSpawner : MonoBehaviour
     public int resourceRooms = 0;
     public int demibossRooms = 0;
     public int demibossRoomsMax = 4;
+    bool edgeRoom;
     public bool spawnRoomSpawned;
     public bool bossRoomSpawned;
-
     public NavMeshSurface surface;
 
    
     // Start is called before the first frame update
     void Start()
     {
-
         GenerateLevel();
-        surface.BuildNavMesh();
+        GenerateNavMesh();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+                    
     }
 
 
@@ -66,53 +65,61 @@ public class RoomSpawner : MonoBehaviour
                     // Top right corner room
                     Debug.Log("Top right " + roomCount);
                     GameObject instance = Instantiate(topRightRoom, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
-                    AssignRoomType(instance);
+                    edgeRoom = true;
+                    AssignRoomType(instance, edgeRoom);
                 }
                 else if (j == -bounds & i == bounds)
                 {
                     // Bottom right corner room
                     Debug.Log("Bottom right " + roomCount);
                     GameObject instance = Instantiate(bottomRightRoom, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
-                    AssignRoomType(instance);
+                    edgeRoom = true;
+                    AssignRoomType(instance, edgeRoom);
                 }
                 else if (i == -bounds & j == -bounds)
                 {
                     // Bottom left corner room
                     Debug.Log("Bottom Left " + roomCount);
                     GameObject instance = Instantiate(bottomLeftRoom, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
-                    AssignRoomType(instance);
+                    edgeRoom = true;
+                    AssignRoomType(instance, edgeRoom);
                 }
                 else if (i == -bounds & j == bounds)
                 {
                     // Top left corner room
                     Debug.Log("Top Left " + roomCount);
                     GameObject instance = Instantiate(topLeftRoom, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
-                    AssignRoomType(instance);
+                    edgeRoom = true;
+                    AssignRoomType(instance, edgeRoom);
                 }
                 else if (i == -bounds)
                 {
                     // Edge room
                     GameObject instance = Instantiate(leftWall, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
-                    AssignRoomType(instance);
+                    edgeRoom = true;
+                    AssignRoomType(instance, edgeRoom);
                 }
                 else if (i == bounds)
                 {
                     // Edge room
                     GameObject instance = Instantiate(rightWall, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
-                    AssignRoomType(instance);
+                    edgeRoom = true;
+                    AssignRoomType(instance, edgeRoom);
                 }
                 else if (j == -bounds)
                 {
                     // Edge room
                     GameObject instance = Instantiate(bottomWall, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
-                    AssignRoomType(instance);
+                    edgeRoom = true;
+                    AssignRoomType(instance, edgeRoom);
 
                 }
                 else if (j == bounds)
                 {
                     // Edge room
                     GameObject instance = Instantiate(topWall, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
-                    AssignRoomType(instance);
+                    edgeRoom = true;
+                    AssignRoomType(instance, edgeRoom);
                 }
                 else if (j == 0 & i == 0)
                 {
@@ -150,6 +157,8 @@ public class RoomSpawner : MonoBehaviour
                 {
                     // Regular rooms
                     GameObject instance = Instantiate(connectingRoom, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
+                    edgeRoom = false;
+                    AssignRoomType(instance, edgeRoom);
                 }
 
                 roomCount++;
@@ -157,9 +166,9 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-void AssignRoomType(GameObject room)
+    void AssignRoomType(GameObject room, bool edgeRoom)
     {
-        if (demibossRooms < demibossRoomsMax) // if we have not reached the max cap of demiboss rooms
+        if (demibossRooms < demibossRoomsMax && edgeRoom) // if we have not reached the max cap of demiboss rooms and we're an edge room
         {
             int randomNumber = Random.Range(0, 101);
             Debug.Log(randomNumber);
@@ -192,7 +201,7 @@ void AssignRoomType(GameObject room)
             }
         }
 
-        else // max amount of demiboss rooms, continue without checking for them
+        else if (demibossRooms >= demibossRoomsMax && edgeRoom)// max amount of demiboss rooms, continue without checking for them
         {
             int randomNumber = Random.Range(0, 101);
 
@@ -217,5 +226,34 @@ void AssignRoomType(GameObject room)
             }
         }
         
+        else // this is a regular room
+        {
+            int randomNumber = Random.Range(0, 101);
+
+            if (randomNumber < 40)
+            {
+                room.tag = "Resource Room";
+                Debug.Log(room.tag);
+            }
+            else if (randomNumber > 39 && randomNumber < 80)
+            {
+                room.tag = "Combat Room";
+                Debug.Log(room.tag);
+            }
+            else if (randomNumber > 79)
+            {
+                room.tag = "Mixed Room";
+                Debug.Log(room.tag);
+            }
+            else
+            {
+                Debug.Log("Something went wrong in your room type assigner");
+            }
+        }
+    }
+
+    public void GenerateNavMesh()
+    {
+        surface.BuildNavMesh();
     }
 }

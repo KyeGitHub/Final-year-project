@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100, movementMask))
             {
-                Debug.Log("We hit " + hit.collider.name + " " + hit.point);
+                //Debug.Log("We hit " + hit.collider.name + " " + hit.point);
                 //move to to what we hit
                 motor.MoveToPoint(hit.point);
 
