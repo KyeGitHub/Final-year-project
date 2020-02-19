@@ -1473,4 +1473,10 @@ MonoBehaviour:
   spawnList: []
   water: {fileID: 2038998664871924351, guid: 713d4662efdc6ba4fb51cb9911a46866, type: 3}
   crystal: {fileID: 2890182374937199450, guid: a012bb913214cfe43aa6fa48b38afeac, type: 3}
+  rangeEnemy: {fileID: 4032935693830085171, guid: 6681e2fed63f75248b73c270ebda8363,
+    type: 3}
+  meleeEnemy: {fileID: 8562443470677844031, guid: c2ccf04aedfd4fc4699c4f5efcd04d07,
+    type: 3}
+  magicEnemy: {fileID: 2817527931476308839, guid: 9dbfedc1c3bbaf541843a6628f9587b2,
+    type: 3}
   nodeCount: 0
