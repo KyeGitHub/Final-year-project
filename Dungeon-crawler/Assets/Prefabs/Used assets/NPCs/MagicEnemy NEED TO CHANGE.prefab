@@ -30,6 +30,19 @@ Transform:
   m_Father: {fileID: 2817527931476308845}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7797313755693461701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239540922751366323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f918729151f6c545a399d93f30ee318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combat: {fileID: 7797313757044748602}
 --- !u!1 &2817527931476308839
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 5
+  wanderRadius: 10
+  wanderTimer: 10
 --- !u!114 &7797313757044748597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,19 +229,6 @@ MonoBehaviour:
   - {fileID: -2516013265382948196, guid: d8a6c6d98c9fd51458dfa0ae455ee7f4, type: 3}
   - {fileID: 989712619511347958, guid: d8a6c6d98c9fd51458dfa0ae455ee7f4, type: 3}
   overrideController: {fileID: 22100000, guid: 197c23e6af1a22a4b8ca1e33e6cf8581, type: 2}
---- !u!114 &7797313755693461701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2239540922751366323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f918729151f6c545a399d93f30ee318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combat: {fileID: 7797313757044748602}
 --- !u!1001 &7797313757373590970
 PrefabInstance:
   m_ObjectHideFlags: 0

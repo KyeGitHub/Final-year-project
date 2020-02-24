@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 5
+  wanderRadius: 10
+  wanderTimer: 10
 --- !u!114 &4467476055884849773
 MonoBehaviour:
   m_ObjectHideFlags: 0

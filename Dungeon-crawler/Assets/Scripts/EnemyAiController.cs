@@ -13,18 +13,26 @@ public class EnemyAiController : MonoBehaviour
     NavMeshAgent agent; //Reference to nav mesh agent
     CharacterCombat combat; //Reference to combat
 
+
+    public float wanderRadius;
+    public float wanderTimer;
+    private float timer;
+
     void Start()
     {
         //grabbing everything
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
+        wanderTimer = Random.value * 10;
+        wanderRadius = Random.value * 100;
     }
 
     // Update is called once per frame
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
+        timer += Time.deltaTime;
 
         if (distance<= lookRadius)
         {
@@ -43,6 +51,12 @@ public class EnemyAiController : MonoBehaviour
                  
             }
         }
+        else if (timer >= wanderTimer)
+        {
+            Wander();
+            wanderTimer = Random.value * 10;
+            wanderRadius = Random.value * 100;
+        }
 
     }
 
@@ -58,6 +72,27 @@ public class EnemyAiController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
+
+    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
+    {
+        Vector3 randDirection = Random.insideUnitSphere * dist;
+
+        randDirection += origin;
+
+        NavMeshHit navHit;
+
+        NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
+
+        return navHit.position;
+    }
+    
+    public void Wander()
+    {
+        Debug.Log("Wander");
+        Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+        agent.SetDestination(newPos);
+        timer = 0;
     }
 }
     
