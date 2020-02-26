@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 8148206339801430218}
   - component: {fileID: -890283056898218415}
   - component: {fileID: 3272350713500857080}
-  m_Layer: 0
+  - component: {fileID: 866402871}
+  - component: {fileID: 866402866}
+  m_Layer: 9
   m_Name: Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +114,34 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.028, y: 0.006, z: 0.2}
   m_TimeToStationary: 0.5
+--- !u!65 &866402871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2890182374937199450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1742054, y: 0.16933705, z: 0.41999564}
+  m_Center: {x: -0.02759861, y: 0.005935726, z: 0.19955762}
+--- !u!114 &866402866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2890182374937199450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f38b27bfaf9014b979c0545531b679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  interactionTransform: {fileID: 3349917368907146800}
+  item: {fileID: 11400000, guid: 0b7c728e267aaa9418b86176c4b15a84, type: 2}
 --- !u!1 &8171692817196344259
 GameObject:
   m_ObjectHideFlags: 0

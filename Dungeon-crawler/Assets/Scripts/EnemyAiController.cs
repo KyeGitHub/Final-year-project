@@ -89,7 +89,7 @@ public class EnemyAiController : MonoBehaviour
     
     public void Wander()
     {
-        Debug.Log("Wander");
+        //Debug.Log("Wander");
         Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
         agent.SetDestination(newPos);
         timer = 0;

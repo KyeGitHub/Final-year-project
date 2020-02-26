@@ -6,12 +6,10 @@ using UnityEngine;
 public class Enemy : Interactable
 {
     PlayerManager playerManager;
-    CharacterStats myStats;
 
     private void Start()
     {
         playerManager = PlayerManager.instance;
-        myStats = GetComponent<CharacterStats>(); //grab the stats of this character
         //interactionTransform = GetComponent<Transform>();
     }
 
@@ -22,11 +20,6 @@ public class Enemy : Interactable
         base.Interact();
 
         CharacterCombat playerCombat = playerManager.player.GetComponent<CharacterCombat>();
-
-        //attack
-        if (playerCombat != null)
-        {
-            playerCombat.Attack(myStats);
-        }
+        playerCombat.SetTarget(this);
     }
 }

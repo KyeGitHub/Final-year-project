@@ -14,8 +14,6 @@ public class Inventory : MonoBehaviour
             Debug.LogWarning("More than one instance of Inventory found!");
             return;
         }
-            
-
         instance = this;
     }
     #endregion
@@ -30,6 +28,7 @@ public class Inventory : MonoBehaviour
 
     public bool Add (Item item)
     {
+        Debug.Log("In add function");
         if (!item.isDefaultItem)
         {
             if (items.Count >= space)
@@ -37,10 +36,31 @@ public class Inventory : MonoBehaviour
                 Debug.Log("Not enough room.");
                 return false;
             }
-            items.Add(item);
-            if(onItemChangedCallBack != null)
+
+            if (item.isStackable && items.Contains(item))
+            {
+                foreach (Item a in items)
+                {
+                    if (a.name == item.name)
+                    {
+                        a.count++;
+                        Debug.Log("Incremented existing item to " + a.count);
+                        if (onItemChangedCallBack != null)
+                            onItemChangedCallBack.Invoke();
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                items.Add(item);
+                item.count = 1;
+            }
+            
+            if (onItemChangedCallBack != null)
                 onItemChangedCallBack.Invoke();
         }
+
         return true;
     }
 

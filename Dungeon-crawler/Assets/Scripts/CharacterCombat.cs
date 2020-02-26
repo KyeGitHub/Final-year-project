@@ -23,6 +23,8 @@ public class CharacterCombat : MonoBehaviour
     CharacterStats myStats;
     CharacterStats opponentStats;
 
+    Enemy target;
+
     private void Start()
     {
         //grab the stats of this character
@@ -37,6 +39,15 @@ public class CharacterCombat : MonoBehaviour
         {
             InCombat = false;
         }
+        if (target != null)
+        {
+            Attack(target.GetComponent<CharacterStats>());
+        }
+    }
+
+    public void SetTarget(Enemy target)
+    {
+        this.target = target;
     }
 
     //takes the stats of the target

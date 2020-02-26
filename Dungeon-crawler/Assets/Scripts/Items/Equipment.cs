@@ -20,7 +20,7 @@ public class Equipment : Item
         //equip item
         EquipmentManager.instance.Equip(this);
         //remove from invent  
-        RemoveFromInentory();
+        RemoveFromInventory();
     }
 
 }

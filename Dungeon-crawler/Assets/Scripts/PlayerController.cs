@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
                 if(interactable != null)
                 {
+                    Debug.Log("SetFocus from right mouse");
                     SetFocus(interactable);
                 }
 
@@ -70,9 +71,10 @@ public class PlayerController : MonoBehaviour
 
     void SetFocus(Interactable newFocus)
     {
-        if(newFocus != focus)
+        if (newFocus != focus)
         {
-            if(focus != null)
+            StopCombat();
+            if (focus != null)
                 focus.OnDeFocus();
 
             focus = newFocus;
@@ -83,11 +85,18 @@ public class PlayerController : MonoBehaviour
 
     void RemoveFocus()
     {
+        StopCombat();
         if (focus != null)
             focus.OnDeFocus();
 
         focus = null;
         motor.StopFollowingTarget();
+    }
+
+    void StopCombat()
+    {
+        CharacterCombat c = GetComponent<CharacterCombat>();
+        if (c != null) c.SetTarget(null);
     }
 }
 

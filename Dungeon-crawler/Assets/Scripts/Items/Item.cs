@@ -10,15 +10,24 @@ public class Item : ScriptableObject
     public int count;
 
 
-    public virtual void Use ()
+    public virtual void Use()
     {
         //use the item
 
         Debug.Log("USING " + name);
     }
     
-    public void RemoveFromInentory()
+    public void RemoveFromInventory()
     {
-        Inventory.instance.Remove(this);
+        if(isStackable & count > 1)
+        {
+            count--;
+        }
+
+        else
+        {
+            Inventory.instance.Remove(this);
+        }
+        
     }
 }
