@@ -27,13 +27,13 @@ public class CharacterCombat : MonoBehaviour
 
     private void Start()
     {
-        //grab the stats of this character
+        // grab the stats of this character
         myStats = GetComponent<CharacterStats>();
     }
 
     private void Update()
     {
-        attackCooldown -= Time.deltaTime; //reduce cooldown per second as it's a timer 
+        attackCooldown -= Time.deltaTime; // reduce cooldown per second as it's a timer 
 
         if (Time.time - lastAttackTime > combatCooldown)
         {
@@ -50,7 +50,7 @@ public class CharacterCombat : MonoBehaviour
         this.target = target;
     }
 
-    //takes the stats of the target
+    // takes the stats of the target
     public void Attack(CharacterStats targetStats)
     {
         if (attackCooldown <= 0f) // if there is no cooldown on attacking
@@ -61,19 +61,19 @@ public class CharacterCombat : MonoBehaviour
                 OnAttack();
 
             attackCooldown = 1f / attackSpeed; //put attack back on cooldown
-            InCombat = true; //in combat now
-            lastAttackTime = Time.time;//the time we got into combat
+            InCombat = true; // in combat now
+            lastAttackTime = Time.time;// the time we got into combat
         }
    
     }
     public void AttackHit_AnimationEvent()
     {
-        //damage the target based on the damage value of the attacking character
+        // damage the target based on the damage value of the attacking character
         opponentStats.TakeDamage(myStats.damage.GetValue());
 
         if (opponentStats.currentHealth <= 0)
         {
-            InCombat = false; //if we killed the target we aren't in combat
+            InCombat = false; // if we killed the target we aren't in combat
         }
     }
 }

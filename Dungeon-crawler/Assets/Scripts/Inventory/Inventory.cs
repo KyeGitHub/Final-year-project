@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
 
 
-    public bool Add (Item item)
+    public bool Add (Item item, int amount)
     {
         Debug.Log("In add function");
         if (!item.isDefaultItem)
@@ -43,13 +43,18 @@ public class Inventory : MonoBehaviour
                 {
                     if (a.name == item.name)
                     {
-                        a.count++;
-                        Debug.Log("Incremented existing item to " + a.count);
+                        a.count+= amount;
+                        Debug.Log("Incremented existing item by: "+amount+" to " + a.count);
                         if (onItemChangedCallBack != null)
                             onItemChangedCallBack.Invoke();
                         return true;
                     }
                 }
+            }
+            else if (item.isStackable && !items.Contains(item))
+            {
+                items.Add(item);
+                item.count = amount;
             }
             else
             {
@@ -67,7 +72,19 @@ public class Inventory : MonoBehaviour
 
     public void Remove(Item item)
     {
-        items.Remove(item);
+        
+        if (!item.isStackable | item.count == 1)
+        {
+            items.Remove(item);
+            Debug.Log("removing item: " + item.name);
+        }
+            
+        else
+        {
+            item.count--;
+            Debug.Log("lowering item count of: " + item.name);
+        }
+            
         if (onItemChangedCallBack != null)
             onItemChangedCallBack.Invoke();
     }
