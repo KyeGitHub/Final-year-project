@@ -67,10 +67,12 @@
     <Compile Include="Assets\Scripts\CharacterAnimationEventReciever.cs" />
     <Compile Include="Assets\Scripts\CharacterAnimator.cs" />
     <Compile Include="Assets\Scripts\CharacterCombat.cs" />
+    <Compile Include="Assets\Scripts\Chat Log\Messenger.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyAiController.cs" />
     <Compile Include="Assets\Scripts\EquipmentManager.cs" />
     <Compile Include="Assets\Scripts\Floater.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HealthUI.cs" />
     <Compile Include="Assets\Scripts\Helper\MeshFromSkinnedMesh.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
