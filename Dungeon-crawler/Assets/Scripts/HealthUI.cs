@@ -46,6 +46,7 @@ public class HealthUI : MonoBehaviour
 
             float healthPercent = (float)currentHealth / maxHealth;
             healthSlider.fillAmount = healthPercent;
+            ui.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = (currentHealth + "/" + maxHealth);
             if (currentHealth <= 0)
             {
                 Destroy(ui.gameObject);
