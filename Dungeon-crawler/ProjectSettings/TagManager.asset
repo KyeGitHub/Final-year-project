@@ -12,6 +12,7 @@ TagManager:
   - SpawnPoint
   - Mixed Room
   - Navmesh
+  - Fishing Spot
   layers:
   - Default
   - TransparentFX
