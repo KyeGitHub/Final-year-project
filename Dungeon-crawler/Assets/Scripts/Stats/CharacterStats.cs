@@ -5,7 +5,7 @@ public class CharacterStats : MonoBehaviour
     private GameManager gm;
 
     public int maxHealth = 100;
-    public int currentHealth { get; private set; }
+    public int currentHealth; //{ get; private set; }
 
     public Stat damage;
     public Stat armour;
@@ -21,10 +21,10 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            TakeDamage(10);
-        }
+        //if(Input.GetKeyDown(KeyCode.T))
+        //{
+        //    TakeDamage(10);
+        //}
     }
 
     public void TakeDamage(int damage)
@@ -36,16 +36,20 @@ public class CharacterStats : MonoBehaviour
         Debug.Log(transform.name + " takes " + damage + " damage.");
         Messenger.Instance.CreateMessage(gm.doDestroy, gm.destroyChatTime, gm.chatMessagePrefab, gm.chatMessageParent, transform.name + " takes " + damage + " damage.", Color.red);
 
-        if (OnHealthChanged != null)
-        {
-            OnHealthChanged(maxHealth, currentHealth);
-        }
+        OnHealthChanged?.Invoke(maxHealth, currentHealth);
 
         if (currentHealth <= 0)
         {
             Die();
         }
 
+    }
+
+    public void Heal(int heal)
+    {
+        currentHealth += heal;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        Messenger.Instance.CreateMessage(gm.doDestroy, gm.destroyChatTime, gm.chatMessagePrefab, gm.chatMessageParent,"Healed " + heal + " health.", Color.green);
     }
     public virtual void Die()
     {

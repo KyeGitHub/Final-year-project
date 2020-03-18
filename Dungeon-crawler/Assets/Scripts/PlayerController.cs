@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
                 if(interactable != null)
                 {
-                    Debug.Log("SetFocus from right mouse");
+                    //Debug.Log("SetFocus from right mouse");
                     SetFocus(interactable);
                 }
 

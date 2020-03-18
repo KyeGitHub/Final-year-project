@@ -22,6 +22,8 @@ public class InventorySlot : MonoBehaviour
             amount.enabled = true;
             amount.text = item.count.ToString();
         }
+        else
+            amount.enabled = false;
     }
 
     public void ClearSlot()
