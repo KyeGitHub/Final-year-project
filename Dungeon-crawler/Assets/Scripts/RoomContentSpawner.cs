@@ -14,8 +14,8 @@ public class RoomContentSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-     #region Content spawning
+
+        #region Content spawning
 
         roomTag = transform.tag; // grab the room tag which was assigned by the spawner, use this to determine what we're putting in the room
 
@@ -43,7 +43,7 @@ public class RoomContentSpawner : MonoBehaviour
             foreach (GameObject spawn in spawnList)
             {
                 ResourceContentSpawner(spawn);
-            }           
+            }
         }
 
         else if (roomTag == "Spawn Room")
@@ -67,7 +67,7 @@ public class RoomContentSpawner : MonoBehaviour
         else
         {
             Debug.Log("Something messed up with your room tag for content spawning" + gameObject.name);
-        }     
+        }
 
         #endregion
     }
@@ -89,7 +89,7 @@ public class RoomContentSpawner : MonoBehaviour
         if (randomNumber < 76) // spawn something
         {
             int a = Random.Range(0, 101);
-            
+
 
             if (a < 34)
             {
@@ -98,8 +98,8 @@ public class RoomContentSpawner : MonoBehaviour
                 instance.transform.parent = gameObject.transform;
                 nodeCount++;
             }
-            
-            else if (a > 33 && a <67)
+
+            else if (a > 33 && a < 67)
             {
                 Debug.Log("Range spawned, a should be between 34 and 66: " + a);
                 GameObject instance = Instantiate(rangeEnemy, spawn.transform.position + new Vector3(0, 0.01f, 0), Quaternion.identity) as GameObject;
@@ -114,7 +114,7 @@ public class RoomContentSpawner : MonoBehaviour
                 nodeCount++;
             }
         }
-        
+
         else if (randomNumber > 75 && nodeCount > 0) // if there's stuff in room don't have to spawn 
         {
             Debug.Log("Not spawning stuff, number should be above 75: " + randomNumber + " and this above 0: " + nodeCount);
@@ -161,7 +161,7 @@ public class RoomContentSpawner : MonoBehaviour
             }
         }
 
-        else if(randomNumber > 41 && randomNumber < 81) // spawn resource
+        else if (randomNumber > 41 && randomNumber < 81) // spawn resource
         {
             int a = Random.Range(0, 101);
 
@@ -203,7 +203,7 @@ public class RoomContentSpawner : MonoBehaviour
 
     void ResourceContentSpawner(GameObject spawn)
     {
-        
+
         int randomNumber = Random.Range(0, 101);
         //Debug.Log(randomNumber +" " + spawn.name);
         if (randomNumber < 30) // spawn water
@@ -223,22 +223,22 @@ public class RoomContentSpawner : MonoBehaviour
         }
         else if (randomNumber > 60 && nodeCount > 0) // if there's stuff in room don't have to spawn 
         {
-            Debug.Log("Not spawning stuff, number should be above 60: " + randomNumber +" and this above 0: " + nodeCount);
+            Debug.Log("Not spawning stuff, number should be above 60: " + randomNumber + " and this above 0: " + nodeCount);
         }
         else // go again
         {
             ResourceContentSpawner(spawn);
         }
 
-        
-            
+
+
 
     }
 
     void BossContentSpawner(GameObject spawn)
     {
-        
-        
+
+
 
     }
 
@@ -267,7 +267,7 @@ public class RoomContentSpawner : MonoBehaviour
         for (int i = 0; i < parent.childCount; i++)
         {
             Transform child = parent.GetChild(i);
-            if (child.tag == _tag)
+            if (child.CompareTag(_tag))
             {
                 spawnList.Add(child.gameObject);
             }

@@ -8,18 +8,38 @@ using UnityEngine.AI;
 public class PlayerMotor : MonoBehaviour
 {
     Transform target;
+    Transform player;
     NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        player = GetComponent<Transform>();
     }
 
     private void Update()
     {
-        if(target != null)
+        if (target != null)
         {
-            agent.SetDestination(target.position);
+            if (!target.GetComponent<Enemy>())
+            {
+                Vector3 source = target.position - (target.position - player.position).normalized * 4;
+                NavMeshHit hit;
+                if (NavMesh.Raycast(source, target.position, out hit, -1))
+                {
+                    agent.SetDestination(hit.position);
+                }
+                else
+                {
+                    agent.SetDestination(target.position);
+                }
+            }
+            else if (target.GetComponent<Enemy>() & !target.GetComponent<Interactable>().hasInteracted)
+            {
+                agent.SetDestination(target.position);
+            }
+
+
             FaceTarget();
         }
     }
@@ -29,20 +49,19 @@ public class PlayerMotor : MonoBehaviour
         agent.SetDestination(point);
     }
 
-    public void FollowTarget (Interactable newTarget)
+    public void FollowTarget(Interactable newTarget)
     {
-        agent.stoppingDistance = newTarget.radius * 0.5f;
         agent.updateRotation = false;
         target = newTarget.interactionTransform;
     }
-    
+
     public void StopFollowingTarget()
     {
         agent.stoppingDistance = 0;
         agent.updateRotation = true;
         target = null;
     }
-    
+
     void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;

@@ -142,6 +142,10 @@ MonoBehaviour:
   radius: 3
   interactionTransform: {fileID: 3349917368907146800}
   item: {fileID: 11400000, guid: 0b7c728e267aaa9418b86176c4b15a84, type: 2}
+  gm: {fileID: 0}
+  wasPickedUp: 0
+  destroyOnPickUp: 1
+  amount: 1
 --- !u!1 &8171692817196344259
 GameObject:
   m_ObjectHideFlags: 0

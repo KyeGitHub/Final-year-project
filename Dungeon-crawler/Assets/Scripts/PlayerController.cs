@@ -58,13 +58,13 @@ public class PlayerController : MonoBehaviour
                 //check if we hit interactable 
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
 
-                if(interactable != null)
+                if (interactable != null)
                 {
                     //Debug.Log("SetFocus from right mouse");
                     SetFocus(interactable);
                 }
 
-                
+
             }
         }
     }

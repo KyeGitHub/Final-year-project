@@ -64,7 +64,7 @@ public class CharacterCombat : MonoBehaviour
             InCombat = true; // in combat now
             lastAttackTime = Time.time;// the time we got into combat
         }
-   
+
     }
     public void AttackHit_AnimationEvent()
     {

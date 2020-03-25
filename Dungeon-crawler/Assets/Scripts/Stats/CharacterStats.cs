@@ -18,7 +18,7 @@ public class CharacterStats : MonoBehaviour
         currentHealth = maxHealth;
         gm = GameObject.FindObjectOfType<GameManager>();
     }
-
+ 
     private void Update()
     {
         //if(Input.GetKeyDown(KeyCode.T))
@@ -49,7 +49,7 @@ public class CharacterStats : MonoBehaviour
     {
         currentHealth += heal;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Messenger.Instance.CreateMessage(gm.doDestroy, gm.destroyChatTime, gm.chatMessagePrefab, gm.chatMessageParent,"Healed " + heal + " health.", Color.green);
+        Messenger.Instance.CreateMessage(gm.doDestroy, gm.destroyChatTime, gm.chatMessagePrefab, gm.chatMessageParent, "Healed " + heal + " health.", Color.green);
     }
     public virtual void Die()
     {

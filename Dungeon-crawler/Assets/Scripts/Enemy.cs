@@ -13,10 +13,10 @@ public class Enemy : Interactable
         //interactionTransform = GetComponent<Transform>();
     }
 
-    //Called when enemy is interacted with
+    // Called when enemy is interacted with
     public override void Interact()
     {
-        //Do normal interact function
+        // Do normal interact function
         base.Interact();
 
         CharacterCombat playerCombat = playerManager.player.GetComponent<CharacterCombat>();

@@ -5,19 +5,22 @@ ScriptsOnlyBuild:
     - CharacterAnimationEventReciever
     - CharacterAnimator
     - CharacterCombat
+    - Consumable
+    - Cooking
     - Enemy
     - EnemyAiController
     - EnemyStats
     - Equipment
     - EquipmentManager
     - Floater
+    - GameManager
     - HealthUI
-    - Interactable
     - Inventory
     - InventorySlot
     - InventoryUI
     - Item
     - ItemPickup
+    - Messenger
     - PlayerAnimator
     - PlayerController
     - PlayerManager
@@ -47,15 +50,21 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Dungeon.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -111,6 +120,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9944}
     - Class: 114
+      Script: {instanceID: 9948}
+    - Class: 114
       Script: {instanceID: 9956}
     - Class: 114
       Script: {instanceID: 9984}
@@ -123,6 +134,10 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10098}
     - Class: 114
+      Script: {instanceID: 10124}
+    - Class: 114
+      Script: {instanceID: 10144}
+    - Class: 114
       Script: {instanceID: 10208}
     - Class: 114
       Script: {instanceID: 10242}
@@ -133,11 +148,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10344}
     - Class: 114
+      Script: {instanceID: 10372}
+    - Class: 114
       Script: {instanceID: 10418}
     - Class: 114
       Script: {instanceID: 10432}
     - Class: 114
       Script: {instanceID: 10500}
+    - Class: 114
+      Script: {instanceID: 10740}
     - Class: 114
       Script: {instanceID: 10744}
     - Class: 114
@@ -155,29 +174,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11064}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 11094}
     - Class: 114
-      Script: {instanceID: 11338}
+      Script: {instanceID: 11100}
+    - Class: 114
+      Script: {instanceID: 11158}
+    - Class: 114
+      Script: {instanceID: 11340}
     - Class: 114
       Script: {instanceID: 11372}
     - Class: 114
-      Script: {instanceID: 11494}
+      Script: {instanceID: 11376}
     - Class: 114
-      Script: {instanceID: 11522}
+      Script: {instanceID: 11498}
     - Class: 114
-      Script: {instanceID: 11560}
+      Script: {instanceID: 11526}
     - Class: 114
-      Script: {instanceID: 11678}
+      Script: {instanceID: 11564}
     - Class: 114
-      Script: {instanceID: 11772}
+      Script: {instanceID: 11682}
     - Class: 114
-      Script: {instanceID: 11852}
+      Script: {instanceID: 11694}
     - Class: 114
-      Script: {instanceID: 11914}
+      Script: {instanceID: 11778}
     - Class: 114
-      Script: {instanceID: 11926}
+      Script: {instanceID: 11858}
     - Class: 114
-      Script: {instanceID: 12016}
+      Script: {instanceID: 11920}
+    - Class: 114
+      Script: {instanceID: 12022}
+    - Class: 114
+      Script: {instanceID: 12092}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -431,7 +458,7 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
-      Hash: f7b6caa79affe42e81ec503a81240e92
+      Hash: 1ee8ea868874f5330f44adf186c93005
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerStats
@@ -491,7 +518,7 @@ ScriptsOnlyBuild:
     className: InventorySlot
   - hash:
       serializedVersion: 2
-      Hash: f7b6caa79affe42e81ec503a81240e92
+      Hash: 1ee8ea868874f5330f44adf186c93005
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyStats
@@ -665,6 +692,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 4bd6e21f3d1b9f187d7024dc8133f2c2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Consumable
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -743,7 +776,13 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: f7b6caa79affe42e81ec503a81240e92
+      Hash: c9d60bed559ba2ae9058cbe57572a2c8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: 1ee8ea868874f5330f44adf186c93005
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharacterStats
@@ -801,6 +840,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Inventory
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Messenger
   - hash:
       serializedVersion: 2
       Hash: 1dcb82730d983b77cec736c6ef19f814
@@ -947,12 +992,18 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: bf5e8afe1d5de1f57902151bf7909221
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Cooking
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/Dungeon.unity
   playerPath: D:/Unity/3rd year game/Final-year-project/Dungeon-crawler/test/Dungeon
     Crawler.exe

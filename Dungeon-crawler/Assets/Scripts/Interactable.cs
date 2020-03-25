@@ -11,9 +11,9 @@ public class Interactable : MonoBehaviour
 
     Transform player;
 
-    bool hasInteracted = false;
+    public bool hasInteracted = false;
 
-    public virtual void Interact ()
+    public virtual void Interact()
     {
         //Debug.Log("Interacting with " + interactionTransform.name);
     }
