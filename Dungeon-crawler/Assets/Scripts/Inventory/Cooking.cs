@@ -22,7 +22,7 @@ public class Cooking : Interactable
     {
         Debug.Log("In Cook");
         // check for raw items remove one and replace with cooked
-        if (Inventory.instance.items.Contains(rawItem)) // if the player has any raw food
+        if (Inventory.instance.Items.Contains(rawItem)) // if the player has any raw food
         {
             // remove raw
             if (rawItem.count > 1)

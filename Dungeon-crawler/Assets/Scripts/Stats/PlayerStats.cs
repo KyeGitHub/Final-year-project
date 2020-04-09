@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats
 {
-   void Start()
+    void Start()
     {
         EquipmentManager.instance.onEquipmentChanged += onEquipmentChanged;
     }
@@ -16,7 +16,7 @@ public class PlayerStats : CharacterStats
             armour.AddModifier(newItem.armourModifier);
             damage.AddModifier(newItem.damageModifier);
         }
-        
+
         if (oldItem != null)
         {
             armour.RemoveModifier(oldItem.armourModifier);

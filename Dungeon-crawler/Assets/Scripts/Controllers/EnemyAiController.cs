@@ -34,21 +34,21 @@ public class EnemyAiController : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
         timer += Time.deltaTime;
 
-        if (distance<= lookRadius)
+        if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
 
-            if(distance <= agent.stoppingDistance)
+            if (distance <= agent.stoppingDistance)
             {
                 CharacterStats targetStats = target.GetComponent<CharacterStats>(); // grab the targets stats
 
                 if (targetStats != null) //if the target has stats and we haven't some how messed up and attacked something that we shouldn't be able to
                 {
-                    //Attack
+                    // Attack
                     combat.Attack(targetStats); //attack the targets Stats
                     FaceTarget();
                 }
-                 
+
             }
         }
         else if (timer >= wanderTimer)
@@ -65,7 +65,7 @@ public class EnemyAiController : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRatation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRatation, Time.deltaTime * 5f);
- 
+
     }
 
     private void OnDrawGizmosSelected()
@@ -86,7 +86,7 @@ public class EnemyAiController : MonoBehaviour
 
         return navHit.position;
     }
-    
+
     public void Wander()
     {
         //Debug.Log("Wander");
@@ -95,4 +95,4 @@ public class EnemyAiController : MonoBehaviour
         timer = 0;
     }
 }
-    
+

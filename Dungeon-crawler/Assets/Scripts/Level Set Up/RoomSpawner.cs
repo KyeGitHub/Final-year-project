@@ -31,7 +31,7 @@ public class RoomSpawner : MonoBehaviour
     public bool bossRoomSpawned;
     public NavMeshSurface surface;
 
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,7 @@ public class RoomSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-                    
+
     }
 
 
@@ -128,7 +128,7 @@ public class RoomSpawner : MonoBehaviour
                     instance.tag = "Spawn Room";
                     spawnRoomSpawned = true;
                 }
-                else if (j==40 & i == 0 & bossRoomSide == 1)
+                else if (j == 40 & i == 0 & bossRoomSide == 1)
                 {
                     Debug.Log("Boss room " + bossRoomSide);
                     GameObject instance = Instantiate(bossRoom, (gameObject.transform.position) + new Vector3(i, 0, j), Quaternion.identity) as GameObject;
@@ -225,7 +225,7 @@ public class RoomSpawner : MonoBehaviour
                 Debug.Log("Something went wrong in your room type assigner");
             }
         }
-        
+
         else // this is a regular room
         {
             int randomNumber = Random.Range(0, 101);

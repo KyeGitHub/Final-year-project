@@ -28,11 +28,11 @@ public class Messenger : MonoBehaviour
     {
         GameObject cm = Instantiate(messagePrefab, messagePrefab.transform.position, Quaternion.identity);  // create message
 
-       cm.transform.SetParent(messageParent); // set the messages parent to be the conent panel
-      
-       cm.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-      
-       cm.transform.GetChild(0).GetComponent<Text>().text = myMessage;
+        cm.transform.SetParent(messageParent); // set the messages parent to be the conent panel
+
+        cm.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+
+        cm.transform.GetChild(0).GetComponent<Text>().text = myMessage;
 
         cm.transform.GetChild(0).GetComponent<Text>().color = messageColour;
 

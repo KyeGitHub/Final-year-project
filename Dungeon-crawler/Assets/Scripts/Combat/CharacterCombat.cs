@@ -60,9 +60,9 @@ public class CharacterCombat : MonoBehaviour
             if (OnAttack != null)
                 OnAttack();
 
-            attackCooldown = 1f / attackSpeed; //put attack back on cooldown
+            attackCooldown = 1f / attackSpeed; // put attack back on cooldown
             InCombat = true; // in combat now
-            lastAttackTime = Time.time;// the time we got into combat
+            lastAttackTime = Time.time; // the time we got into combat
         }
 
     }

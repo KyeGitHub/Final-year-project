@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory : MonoBehaviour, IItemContainer
 {
     #region singleton
     public static Inventory instance;
@@ -21,47 +21,47 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallBack;
 
-    public int space = 20;
+    public int space = 18;
 
-    public List<Item> items = new List<Item>();
+    public List<Item> Items = new List<Item>();
 
 
-    public bool Add (Item item, int amount)
+    public bool Add(Item item, int amount)
     {
         Debug.Log("In add function");
         if (!item.isDefaultItem)
         {
-            if (items.Count >= space)
+            if (IsFull())
             {
                 Debug.Log("Not enough room.");
                 return false;
             }
 
-            if (item.isStackable && items.Contains(item))
+            if (item.isStackable && Items.Contains(item))
             {
-                foreach (Item a in items)
+                foreach (Item a in Items)
                 {
                     if (a.name == item.name)
                     {
-                        a.count+= amount;
-                        Debug.Log("Incremented existing item by: "+amount+" to " + a.count);
+                        a.count += amount;
+                        Debug.Log("Incremented existing item by: " + amount + " to " + a.count);
                         if (onItemChangedCallBack != null)
                             onItemChangedCallBack.Invoke();
                         return true;
                     }
                 }
             }
-            else if (item.isStackable && !items.Contains(item))
+            else if (item.isStackable && !Items.Contains(item))
             {
-                items.Add(item);
+                Items.Add(item);
                 item.count = amount;
             }
             else
             {
-                items.Add(item);
+                Items.Add(item);
                 item.count = 1;
             }
-            
+
             if (onItemChangedCallBack != null)
                 onItemChangedCallBack.Invoke();
         }
@@ -70,22 +70,61 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public void Remove(Item item)
+    public bool Remove(Item item)
     {
-        
+
         if (!item.isStackable | item.count == 1)
         {
-            items.Remove(item);
+            Items.Remove(item);
             Debug.Log("removing item: " + item.name);
         }
-            
+
         else
         {
             item.count--;
             Debug.Log("lowering item count of: " + item.name);
         }
-            
+
         if (onItemChangedCallBack != null)
+        {
             onItemChangedCallBack.Invoke();
+            return true;
+        }
+        return false;
+    }
+
+    public bool ContainsItem(Item item)
+    {
+
+        if (Items.Count != 0)
+        {
+            return true;
+        }
+        return false;
+
+    }
+    public bool IsFull()
+    {
+        if (Items.Count >= space)
+        {
+            Debug.Log("Not enough room.");
+            return true;
+        }
+        return false;
+    }
+
+    public int ItemCount(Item item)
+    {
+        int amount = 0;
+        foreach (Item a in Items)
+        {
+            if (a.name == item.name)
+            {
+                amount += item.count;
+            }
+        }
+
+        return amount;
+
     }
 }
