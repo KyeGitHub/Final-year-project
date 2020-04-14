@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Default Shirt
   m_EditorClassIdentifier: 
   name: Default Shirt
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c233b8885efe7264aa04852f215c5514, type: 3}
   isDefaultItem: 1
+  isStackable: 0
+  count: 0
   equipSlot: 1
   mesh: {fileID: 5425286431479811177, guid: b3f7b980f2ba1ee4cb8e291fd900194f, type: 3}
   coveredMeshRegions: 0100000002000000

@@ -15,6 +15,8 @@ MonoBehaviour:
   name: Hair
   icon: {fileID: 0}
   isDefaultItem: 1
+  isStackable: 0
+  count: 0
   equipSlot: 0
   mesh: {fileID: 8923790964579423966, guid: 7eca37c727ee8fc438e3e3ddde031be1, type: 3}
   coveredMeshRegions: 

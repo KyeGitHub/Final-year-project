@@ -96,9 +96,12 @@ public class Inventory : MonoBehaviour, IItemContainer
     public bool ContainsItem(Item item)
     {
 
-        if (Items.Count != 0)
+        foreach (Item a in Items)
         {
-            return true;
+            if (a.name == item.name)
+            {
+                return true;
+            }
         }
         return false;
 

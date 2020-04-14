@@ -31,7 +31,7 @@ public class ItemPickup : Interactable
 
         if (wasPickedUp && destroyOnPickUp)
         {
-            Debug.Log(wasPickedUp + " " + destroyOnPickUp);
+            //Debug.Log(wasPickedUp + " " + destroyOnPickUp);
             Destroy(this.gameObject);
         }
 

@@ -16,7 +16,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: dc3638e55413ffc49ac15bb7fc9db230, type: 3}
   isDefaultItem: 0
   isStackable: 0
-  count: 0
+  count: 1
+  rarity: {fileID: 11400000, guid: 855b7e74cd780bf4fae8676236d31c4f, type: 2}
   equipSlot: 3
   mesh: {fileID: 5435182662595724774, guid: b5b0a70016c8c654e996b8bdc9d517ad, type: 3}
   coveredMeshRegions: 

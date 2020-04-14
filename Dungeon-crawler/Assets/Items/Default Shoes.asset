@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Default Shoes
   m_EditorClassIdentifier: 
   name: Default Shoes
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c233b8885efe7264aa04852f215c5514, type: 3}
   isDefaultItem: 1
+  isStackable: 0
+  count: 0
   equipSlot: 5
   mesh: {fileID: 1651219826147791050, guid: 1701f6356a267814ba1c658ebc17ecb4, type: 3}
   coveredMeshRegions: 

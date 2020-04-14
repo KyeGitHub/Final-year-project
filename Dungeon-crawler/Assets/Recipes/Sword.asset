@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084e54c88927e914382b7e70382f048c, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  materials:
+  Materials:
   - item: {fileID: 11400000, guid: 0b7c728e267aaa9418b86176c4b15a84, type: 2}
-    amount: 3
-  results:
+    amount: 5
+  Results:
   - item: {fileID: 11400000, guid: c321066e5bd0bfc47840c1d27be96c47, type: 2}
     amount: 1

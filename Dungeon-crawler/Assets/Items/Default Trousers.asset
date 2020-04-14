@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Default Trousers
   m_EditorClassIdentifier: 
   name: Default Trousers
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c233b8885efe7264aa04852f215c5514, type: 3}
   isDefaultItem: 1
+  isStackable: 0
+  count: 0
   equipSlot: 2
   mesh: {fileID: 327376033625094659, guid: 6d6e44b081bda474aa27992246a79839, type: 3}
   coveredMeshRegions: 00000000

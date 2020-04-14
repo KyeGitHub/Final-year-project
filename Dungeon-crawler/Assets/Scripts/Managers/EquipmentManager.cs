@@ -17,12 +17,13 @@ public class EquipmentManager : MonoBehaviour
 
     public SkinnedMeshRenderer targetMesh;
 
-    Equipment[] currentEquipment;
+    public Equipment[] currentEquipment;
     SkinnedMeshRenderer[] currentMeshes;
 
     public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
     public OnEquipmentChanged onEquipmentChanged;
 
+    public EquipmentSlotUI[] equipmentSlots;
 
     Inventory inventory;
 
@@ -48,12 +49,17 @@ public class EquipmentManager : MonoBehaviour
         SetEquipmentBlendShapes(newItem, 100);
 
         currentEquipment[slotIndex] = newItem;
+
+        Destroy(currentMeshes[slotIndex]);
+
         SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
         newMesh.transform.parent = targetMesh.transform;
 
         newMesh.bones = targetMesh.bones;
         newMesh.rootBone = targetMesh.rootBone;
         currentMeshes[slotIndex] = newMesh;
+
+        equipmentSlots[slotIndex].AddItem(newItem);
     }
 
     public Equipment Unequip (int slotIndex)
@@ -75,6 +81,15 @@ public class EquipmentManager : MonoBehaviour
             {
                 onEquipmentChanged.Invoke(null, oldItem);
             }
+            if (defaultItems[slotIndex] != null)
+            {
+                Equip(defaultItems[slotIndex]);
+                equipmentSlots[slotIndex].AddItem(defaultItems[slotIndex]);
+            }
+            else
+                equipmentSlots[slotIndex].ClearSlot();
+               
+           
             return oldItem;
         }
         return null;

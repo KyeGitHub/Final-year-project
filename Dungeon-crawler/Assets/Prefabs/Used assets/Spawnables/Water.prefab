@@ -4937,9 +4937,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   interactionTransform: {fileID: 7389318692931784211}
+  hasInteracted: 0
   item: {fileID: 11400000, guid: 833d0c3b331f4404eaec6f51c8ebd8a4, type: 2}
   gm: {fileID: 0}
   wasPickedUp: 0
+  destroyOnPickUp: 1
+  amount: 1
 --- !u!1001 &544651575
 PrefabInstance:
   m_ObjectHideFlags: 0

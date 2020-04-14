@@ -1,20 +1,22 @@
 ﻿using System.Collections;
+using System.Text;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Consumable")]
+[CreateAssetMenu(fileName = "New Consumable", menuName = "Inventory/Consumable")]
 public class Consumable : Item
 {
-    public int heal;
-    public GameObject player;
+    [SerializeField] private Rarity rarity;
+    [SerializeField] private string useText = "Something";
+    public Rarity Rarity { get { return rarity; } }
+
+    [SerializeField] private int heal;
+    private GameObject player;
     PlayerStats myStats;
 
     private void Awake()
     {
-        // doesnt work for some reason
-        //player = GameObject.FindGameObjectWithTag("Player");
-        //myStats = player.GetComponent<PlayerStats>();
-        //Debug.Log("HERE: " + myStats.currentHealth);
+        
     }
     public override void Use()
     {
@@ -23,7 +25,7 @@ public class Consumable : Item
         base.Use();
         // Increase health by 15
         myStats.Heal(heal);
-        // remove item
+        // Remove item
         Inventory.instance.Remove(this);
     }
 }

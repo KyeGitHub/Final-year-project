@@ -15,6 +15,9 @@ MonoBehaviour:
   name: Shield
   icon: {fileID: 21300000, guid: c258ef03e07c27f41aab03a684275669, type: 3}
   isDefaultItem: 0
+  isStackable: 0
+  count: 1
+  rarity: {fileID: 11400000, guid: e9957402ba133874fbea5f9da5545289, type: 2}
   equipSlot: 4
   mesh: {fileID: 8730755982064079987, guid: 8fbbe16e3afff954587bcb029eb162af, type: 3}
   coveredMeshRegions: 

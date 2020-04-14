@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084e54c88927e914382b7e70382f048c, type: 3}
   m_Name: Helmet
   m_EditorClassIdentifier: 
-  materials:
+  Materials:
   - item: {fileID: 11400000, guid: 0b7c728e267aaa9418b86176c4b15a84, type: 2}
-    amount: 3
-  results:
+    amount: 5
+  Results:
   - item: {fileID: 11400000, guid: 696796cd58a189047a9e9796b4ad7f2f, type: 2}
     amount: 1

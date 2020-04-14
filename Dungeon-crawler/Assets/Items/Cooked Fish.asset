@@ -17,5 +17,6 @@ MonoBehaviour:
   isDefaultItem: 0
   isStackable: 0
   count: 1
+  rarity: {fileID: 11400000, guid: e9957402ba133874fbea5f9da5545289, type: 2}
+  useText: 'Use: Heals 15 Health'
   heal: 15
-  player: {fileID: 0}

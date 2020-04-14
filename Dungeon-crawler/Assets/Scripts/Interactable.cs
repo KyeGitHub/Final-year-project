@@ -41,7 +41,7 @@ public class Interactable : MonoBehaviour
         hasInteracted = false;
     }
 
-    public void OnDeFocus()
+    public virtual void OnDeFocus()
     {
         isFocus = false;
         player = null;

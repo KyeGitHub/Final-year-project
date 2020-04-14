@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   interactionTransform: {fileID: 3349917368907146800}
+  hasInteracted: 0
   item: {fileID: 11400000, guid: 0b7c728e267aaa9418b86176c4b15a84, type: 2}
   gm: {fileID: 0}
   wasPickedUp: 0

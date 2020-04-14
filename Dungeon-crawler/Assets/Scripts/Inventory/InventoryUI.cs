@@ -41,6 +41,6 @@ public class InventoryUI : MonoBehaviour
                 slots[i].ClearSlot();
             }
         }
-        Debug.Log("UPDATING UI");
+        Debug.Log("UPDATING INVENTORY UI");
     }
 }
