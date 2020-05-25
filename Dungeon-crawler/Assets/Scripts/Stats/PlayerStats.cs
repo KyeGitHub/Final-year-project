@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : CharacterStats
 {
+    [SerializeField] private PlayerMotor playerMotor;
+    [SerializeField] private GameObject playerGFX;
     void Start()
     {
         EquipmentManager.instance.onEquipmentChanged += onEquipmentChanged;
+        damage.baseValue += PlayerPrefs.GetInt("unlockedDamage");
+        armour.baseValue += PlayerPrefs.GetInt("unlockedArmour");
+
     }
 
     void onEquipmentChanged(Equipment newItem, Equipment oldItem)
@@ -19,6 +25,7 @@ public class PlayerStats : CharacterStats
 
         if (oldItem != null)
         {
+          
             armour.RemoveModifier(oldItem.armourModifier);
             damage.RemoveModifier(oldItem.damageModifier);
         }
@@ -26,12 +33,6 @@ public class PlayerStats : CharacterStats
 
     public override void Die()
     {
-        base.Die();
-        PlayerManager.instance.KillPlayer();
-        // Kill player
-        // drop items
-        // health back to full
-        // Clear any focus 
-
+        SceneManager.LoadScene("Hub", LoadSceneMode.Single);
     }
 }

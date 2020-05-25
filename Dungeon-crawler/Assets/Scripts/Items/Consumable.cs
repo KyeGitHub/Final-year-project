@@ -7,17 +7,12 @@ using UnityEngine;
 public class Consumable : Item
 {
     [SerializeField] private Rarity rarity;
-    [SerializeField] private string useText = "Something";
     public Rarity Rarity { get { return rarity; } }
 
     [SerializeField] private int heal;
     private GameObject player;
     PlayerStats myStats;
 
-    private void Awake()
-    {
-        
-    }
     public override void Use()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -27,5 +22,21 @@ public class Consumable : Item
         myStats.Heal(heal);
         // Remove item
         Inventory.instance.Remove(this);
+    }
+
+    public override string GetTooltip()
+    {
+        string tooltipText;
+
+        StringBuilder builder = new StringBuilder();
+        builder.Append(name).AppendLine();
+        if (rarity != null)
+            builder.Append(rarity.name).AppendLine();
+        builder.Append(useText).AppendLine();
+
+
+        tooltipText = builder.ToString();
+        return tooltipText;
+
     }
 }

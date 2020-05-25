@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7edd9e5911e9e4e966321252f45531, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
+  useText: Something
   name: Shield
+  tooltipText: 
   icon: {fileID: 21300000, guid: c258ef03e07c27f41aab03a684275669, type: 3}
   isDefaultItem: 0
   isStackable: 0

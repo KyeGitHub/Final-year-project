@@ -68,7 +68,6 @@ public class CraftingUI : MonoBehaviour
 	public void onCraftButton()
 	{
 		craftingRecipe.Craft(Inventory.instance);
-
 	}
 
 }

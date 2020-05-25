@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour, IItemContainer
 {
+    public static int dustAmount = 0;
+
     #region singleton
     public static Inventory instance;
+    
 
     private void Awake()
     {
@@ -105,6 +108,19 @@ public class Inventory : MonoBehaviour, IItemContainer
         }
         return false;
 
+    }
+    public void ConvertToDust()
+    {
+        foreach(Item a in Items)
+        {
+            if (!a.isDefaultItem)
+            {
+                dustAmount += (a.dustValue*a.count);
+                Remove(a);
+            }
+        }
+       
+       
     }
     public bool IsFull()
     {

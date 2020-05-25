@@ -53,9 +53,8 @@ public class CharacterStats : MonoBehaviour
     }
     public virtual void Die()
     {
-        //Die in someway
-        //This method is meant to be overwritten
-        Debug.Log(transform.name + " has died.");
+        // Die in some way
+        // This method is meant to be overwritten
         Messenger.Instance.CreateMessage(gm.doDestroy, gm.destroyChatTime, gm.chatMessagePrefab, gm.chatMessageParent, transform.name + " has died.", Color.red);
     }
 

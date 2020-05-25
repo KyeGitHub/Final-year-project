@@ -37,15 +37,16 @@ public class EquipmentManager : MonoBehaviour
         EquipDefaultItems();
     }
 
-    public void Equip (Equipment newItem)
+    public void Equip(Equipment newItem)
     {
         int slotIndex = (int)newItem.equipSlot;
-        Equipment oldItem = Unequip(slotIndex); 
+        Equipment oldItem = Unequip(slotIndex);
 
-        if(onEquipmentChanged != null)
+        if (onEquipmentChanged != null)
         {
             onEquipmentChanged.Invoke(newItem, oldItem);
         }
+
         SetEquipmentBlendShapes(newItem, 100);
 
         currentEquipment[slotIndex] = newItem;
@@ -62,18 +63,18 @@ public class EquipmentManager : MonoBehaviour
         equipmentSlots[slotIndex].AddItem(newItem);
     }
 
-    public Equipment Unequip (int slotIndex)
+    public Equipment Unequip(int slotIndex)
     {
         if (currentEquipment[slotIndex] != null)
         {
-            if (currentMeshes[slotIndex] !=null)
+            if (currentMeshes[slotIndex] != null)
             {
                 Destroy(currentMeshes[slotIndex].gameObject);
             }
 
             Equipment oldItem = currentEquipment[slotIndex];
             SetEquipmentBlendShapes(oldItem, 0);
-            inventory.Add(oldItem,0);
+            inventory.Add(oldItem, 0);
 
             currentEquipment[slotIndex] = null;
 
@@ -88,8 +89,8 @@ public class EquipmentManager : MonoBehaviour
             }
             else
                 equipmentSlots[slotIndex].ClearSlot();
-               
-           
+
+
             return oldItem;
         }
         return null;
@@ -106,7 +107,7 @@ public class EquipmentManager : MonoBehaviour
 
     void SetEquipmentBlendShapes(Equipment item, int weight)
     {
-        foreach(EquipmentMeshRegion blendShape in item.coveredMeshRegions)
+        foreach (EquipmentMeshRegion blendShape in item.coveredMeshRegions)
         {
             targetMesh.SetBlendShapeWeight((int)blendShape, weight);
         }
@@ -114,16 +115,31 @@ public class EquipmentManager : MonoBehaviour
 
     void EquipDefaultItems()
     {
-        foreach(Equipment item in defaultItems)
+        foreach (Equipment item in defaultItems)
         {
             Equip(item);
         }
+    }
+
+    public void ConvertToDust()
+    {
+        
+        foreach (Equipment item in currentEquipment)
+        {
+            if (!item.isDefaultItem)
+            {
+                Inventory.dustAmount += (item.dustValue);     
+            }
+            
+        }
+      
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
             UnequipAll();
+
     }
 
 }

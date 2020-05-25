@@ -8,8 +8,14 @@ public class RoomContentSpawner : MonoBehaviour
     public string searchTag;
     public string roomTag;
     public List<GameObject> spawnList = new List<GameObject>();
-    public GameObject water, crystal, rangeEnemy, meleeEnemy, magicEnemy;
+    public GameObject water, crystal, rangeEnemy, meleeEnemy, magicEnemy, demiBoss, boss;
     public int nodeCount = 0;
+    [SerializeField]
+    bool demiBossSpawned = false;
+    [SerializeField]
+    bool bossSpawned = false;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +33,7 @@ public class RoomContentSpawner : MonoBehaviour
 
         if (roomTag == "Boss Room")
         {
-
+                         
         }
 
         else if (roomTag == "Combat Room")
@@ -53,7 +59,10 @@ public class RoomContentSpawner : MonoBehaviour
 
         else if (roomTag == "Demi Boss Room")
         {
-
+            foreach (GameObject spawn in spawnList)
+            {
+                DemiContentSpawner(spawn);
+            }
         }
 
         else if (roomTag == "Mixed Room")
@@ -196,8 +205,17 @@ public class RoomContentSpawner : MonoBehaviour
 
     void DemiContentSpawner(GameObject spawn)
     {
-
-
+        if (!demiBossSpawned)
+        {
+            GameObject instance = Instantiate(demiBoss, spawn.transform.position + new Vector3(0, 0.01f, 0), Quaternion.identity) as GameObject;
+            instance.transform.parent = gameObject.transform;
+            demiBossSpawned = true;
+            nodeCount++;
+        }
+        else
+        {
+            MixedContentSpawner(spawn);
+        }
 
     }
 
@@ -238,8 +256,13 @@ public class RoomContentSpawner : MonoBehaviour
     void BossContentSpawner(GameObject spawn)
     {
 
-
-
+        if (!bossSpawned)
+        {
+            GameObject instance = Instantiate(boss, spawn.transform.position + new Vector3(0, 0.01f, 0), Quaternion.identity) as GameObject;
+            instance.transform.parent = gameObject.transform;
+            bossSpawned = true;
+        }
+       
     }
 
     void SpawnContentSpawner(GameObject spawn)

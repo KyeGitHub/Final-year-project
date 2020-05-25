@@ -18,6 +18,8 @@ public class EquipmentUI : MonoBehaviour
         if (Input.GetButtonDown("Equipment"))
         {
             equipmentUI.SetActive(!equipmentUI.activeSelf);
+            if (!equipmentUI.activeSelf)
+                Tooltip.HideToolTip_Static();
         }
     }
 

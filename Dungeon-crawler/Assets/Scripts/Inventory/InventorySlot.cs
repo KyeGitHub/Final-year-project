@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Text;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
     public Image icon;
@@ -38,7 +39,7 @@ public class InventorySlot : MonoBehaviour
         if (amount != null)
             amount.enabled = false;
     }
-
+  
     public void OnRemoveButton()
     {
         Inventory.instance.Remove(item);
@@ -50,5 +51,17 @@ public class InventorySlot : MonoBehaviour
         {
             item.Use();
         }
+    } 
+   
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(item != null)
+            Tooltip.ShowToolTip_Static(item.GetTooltip());
     }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Tooltip.HideToolTip_Static();
+    }
+
 }

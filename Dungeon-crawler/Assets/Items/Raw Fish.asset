@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1685828d1cee04295341695ece0d2b, type: 3}
   m_Name: Raw Fish
   m_EditorClassIdentifier: 
+  useText: Cook me.
   name: Raw Fish
+  tooltipText: 
   icon: {fileID: 21300000, guid: 3435b7728d4349640ae8fa429b0d905c, type: 3}
   isDefaultItem: 0
   isStackable: 1
-  count: 1
+  count: 2

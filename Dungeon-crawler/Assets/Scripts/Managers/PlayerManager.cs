@@ -8,19 +8,14 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     #region Singleton
     public static PlayerManager instance;
-
     private void Awake()
     {
         instance = this;
     }
     #endregion
 
-    public GameObject player;
+    [SerializeField] public GameObject player;
+    [SerializeField] private PlayerMotor playerMotor;
 
-
-    public void KillPlayer()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }
 

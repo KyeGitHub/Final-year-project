@@ -63,19 +63,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BossRoomManager.cs" />
+    <Compile Include="Assets\Exit.cs" />
     <Compile Include="Assets\Scripts\Animation\CharacterAnimationEventReciever.cs" />
     <Compile Include="Assets\Scripts\Animation\CharacterAnimator.cs" />
     <Compile Include="Assets\Scripts\Animation\Floater.cs" />
     <Compile Include="Assets\Scripts\Animation\PlayerAnimator.cs" />
+    <Compile Include="Assets\Scripts\BossDoor.cs" />
     <Compile Include="Assets\Scripts\Chat Log\Messenger.cs" />
     <Compile Include="Assets\Scripts\Combat\CharacterCombat.cs" />
     <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
     <Compile Include="Assets\Scripts\Controllers\EnemyAiController.cs" />
     <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Crafting\CraftButtonUI.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingInteraction.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingRecipe.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingSlot.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingUI.cs" />
+    <Compile Include="Assets\Scripts\DustCountUI.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Helper\MeshFromSkinnedMesh.cs" />
     <Compile Include="Assets\Scripts\IItemContainer.cs" />
@@ -93,18 +98,30 @@
     <Compile Include="Assets\Scripts\Items\FishingSpot.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Items\ItemPickup.cs" />
+    <Compile Include="Assets\Scripts\Items\Key.cs" />
     <Compile Include="Assets\Scripts\Items\Rarity.cs" />
+    <Compile Include="Assets\Scripts\Items\Unlocks\Armour Up\ArmourUp.cs" />
+    <Compile Include="Assets\Scripts\Items\Unlocks\Attack Up\AttackUp.cs" />
+    <Compile Include="Assets\Scripts\Items\Unlocks\Unlock.cs" />
     <Compile Include="Assets\Scripts\Level Set Up\HealthUI.cs" />
     <Compile Include="Assets\Scripts\Level Set Up\RoomContentSpawner.cs" />
     <Compile Include="Assets\Scripts\Level Set Up\RoomSpawner.cs" />
+    <Compile Include="Assets\Scripts\LevelSelectInteractable.cs" />
     <Compile Include="Assets\Scripts\Managers\EquipmentManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
+    <Compile Include="Assets\Scripts\Reward Shop\ShopInteraction.cs" />
+    <Compile Include="Assets\Scripts\Reward Shop\ShopRecipe.cs" />
+    <Compile Include="Assets\Scripts\Reward Shop\ShopSlot.cs" />
+    <Compile Include="Assets\Scripts\Reward Shop\ShopUI.cs" />
+    <Compile Include="Assets\Scripts\Stats\BossStats.cs" />
     <Compile Include="Assets\Scripts\Stats\CharacterStats.cs" />
+    <Compile Include="Assets\Scripts\Stats\DemiBossStats.cs" />
     <Compile Include="Assets\Scripts\Stats\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Stats\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
+    <Compile Include="Assets\Scripts\Tooltip.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

@@ -13,6 +13,7 @@ TagManager:
   - Mixed Room
   - Navmesh
   - Fishing Spot
+  - Crafting Menu
   layers:
   - Default
   - TransparentFX

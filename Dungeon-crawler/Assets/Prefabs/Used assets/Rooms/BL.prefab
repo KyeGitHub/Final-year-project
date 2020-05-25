@@ -1479,4 +1479,8 @@ MonoBehaviour:
     type: 3}
   magicEnemy: {fileID: 2817527931476308839, guid: 9dbfedc1c3bbaf541843a6628f9587b2,
     type: 3}
+  demiBoss: {fileID: 8562443470677844031, guid: 46137fca0f09e8a4db9d59fb8c4b261e,
+    type: 3}
+  boss: {fileID: 7881046085528215308, guid: e82fa3a33eb8709469c3de4a9ba2128b, type: 3}
   nodeCount: 0
+  demiBossSpawned: 0

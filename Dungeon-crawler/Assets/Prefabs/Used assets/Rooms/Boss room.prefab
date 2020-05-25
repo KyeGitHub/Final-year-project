@@ -126,66 +126,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &560960048670988092
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4901305133355774209}
-  m_Layer: 0
-  m_Name: BottomRightSpawnPoint
-  m_TagString: SpawnPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4901305133355774209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560960048670988092}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3980245619400729815}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &568205834558279774
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7339241844442658314}
-  m_Layer: 0
-  m_Name: TopLeftSpawnPoint
-  m_TagString: SpawnPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7339241844442658314
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568205834558279774}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3980245619400729815}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1725148358845129810
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +266,7 @@ GameObject:
   - component: {fileID: 5509962320329396180}
   - component: {fileID: 6458214232851679852}
   - component: {fileID: 8075414520433484442}
+  - component: {fileID: 4875871091789558861}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -438,36 +379,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &2677430041126915195
-GameObject:
+--- !u!114 &4875871091789558861
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7725209659296247793}
-  m_Layer: 0
-  m_Name: BottomLeftSpawnPoint
-  m_TagString: SpawnPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7725209659296247793
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2677430041126915195}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3980245619400729815}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1758153743771558496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c407f8cc4d8f15840899ff51c0acaf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3.5
+  interactionTransform: {fileID: 1163502049383164680}
+  hasInteracted: 0
+  bossKey: {fileID: 11400000, guid: e72150a24f799b64894ef302f3ebedd9, type: 2}
 --- !u!1 &3163251276485256082
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +661,7 @@ GameObject:
   - component: {fileID: 4402712822016651181}
   - component: {fileID: 5034138659472567901}
   - component: {fileID: 1475155259753083802}
+  - component: {fileID: 405890574208025945}
   m_Layer: 0
   m_Name: TopDoor
   m_TagString: Untagged
@@ -846,6 +774,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &405890574208025945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4470575201644707384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c407f8cc4d8f15840899ff51c0acaf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3.5
+  interactionTransform: {fileID: 7754918503029091301}
+  hasInteracted: 0
+  bossKey: {fileID: 11400000, guid: e72150a24f799b64894ef302f3ebedd9, type: 2}
 --- !u!1 &4534142199564280580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1051,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3980245619400729815}
-  - component: {fileID: 8508166059079892585}
+  - component: {fileID: 6651814617053156347}
+  - component: {fileID: 6881030340349257949}
   m_Layer: 0
   m_Name: Boss room
   m_TagString: Untagged
@@ -1139,14 +1084,10 @@ Transform:
   - {fileID: 1163502049383164680}
   - {fileID: 7456087421707238248}
   - {fileID: 3353319458293197976}
-  - {fileID: 5821932260609120381}
-  - {fileID: 7725209659296247793}
-  - {fileID: 4901305133355774209}
-  - {fileID: 7339241844442658314}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8508166059079892585
+--- !u!114 &6651814617053156347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1155,21 +1096,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 6018369705594677645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f10061019ffd0af4791a754bdc3cc2c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 50a8d7949bac06048bf4a1f16e8473b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchTag: SpawnPoint
-  roomTag: 
-  spawnList: []
-  water: {fileID: 2038998664871924351, guid: 713d4662efdc6ba4fb51cb9911a46866, type: 3}
-  crystal: {fileID: 2890182374937199450, guid: a012bb913214cfe43aa6fa48b38afeac, type: 3}
-  rangeEnemy: {fileID: 4032935693830085171, guid: 6681e2fed63f75248b73c270ebda8363,
-    type: 3}
-  meleeEnemy: {fileID: 8562443470677844031, guid: c2ccf04aedfd4fc4699c4f5efcd04d07,
-    type: 3}
-  magicEnemy: {fileID: 2817527931476308839, guid: 9dbfedc1c3bbaf541843a6628f9587b2,
-    type: 3}
-  nodeCount: 0
+  doors:
+  - {fileID: 4470575201644707384}
+  - {fileID: 6314137418351354937}
+  - {fileID: 1758153743771558496}
+  - {fileID: 7796759182035825566}
+  boss: {fileID: 7881046085528215308, guid: e82fa3a33eb8709469c3de4a9ba2128b, type: 3}
+  spawn: {fileID: 7714482780949469478}
+--- !u!65 &6881030340349257949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018369705594677645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 35, y: 1, z: 35}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6314137418351354937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1133,7 @@ GameObject:
   - component: {fileID: 8129510974690028972}
   - component: {fileID: 7538926923875134610}
   - component: {fileID: 7881633344707613010}
+  - component: {fileID: 1916289863465286644}
   m_Layer: 0
   m_Name: BottomDoor
   m_TagString: Untagged
@@ -1296,6 +1246,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1916289863465286644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6314137418351354937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c407f8cc4d8f15840899ff51c0acaf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3.5
+  interactionTransform: {fileID: 80906753733963833}
+  hasInteracted: 0
+  bossKey: {fileID: 11400000, guid: e72150a24f799b64894ef302f3ebedd9, type: 2}
 --- !u!1 &6342712278874339224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,6 +1432,7 @@ GameObject:
   - component: {fileID: 3477535179996363799}
   - component: {fileID: 7437105146835513487}
   - component: {fileID: 5883503633894135966}
+  - component: {fileID: 8525056218828130384}
   m_Layer: 0
   m_Name: RightDoor
   m_TagString: Untagged
@@ -1578,6 +1545,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &8525056218828130384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796759182035825566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c407f8cc4d8f15840899ff51c0acaf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3.5
+  interactionTransform: {fileID: 7456087421707238248}
+  hasInteracted: 0
+  bossKey: {fileID: 11400000, guid: e72150a24f799b64894ef302f3ebedd9, type: 2}
 --- !u!1 &8329065606057070013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,33 +1687,3 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &9100873496553469351
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5821932260609120381}
-  m_Layer: 0
-  m_Name: TopRightSpawnPoint
-  m_TagString: SpawnPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5821932260609120381
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9100873496553469351}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3980245619400729815}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

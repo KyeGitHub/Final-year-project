@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37660969918f36a41946fdf11df36cd0, type: 3}
   m_Name: Cooked Fish
   m_EditorClassIdentifier: 
+  useText: 'Use: Heals 15 Health'
   name: Cooked Fish
+  tooltipText: 
   icon: {fileID: 21300000, guid: b3faa0f6d767c9e499e53cfb1637967a, type: 3}
   isDefaultItem: 0
   isStackable: 0
   count: 1
   rarity: {fileID: 11400000, guid: e9957402ba133874fbea5f9da5545289, type: 2}
-  useText: 'Use: Heals 15 Health'
   heal: 15
